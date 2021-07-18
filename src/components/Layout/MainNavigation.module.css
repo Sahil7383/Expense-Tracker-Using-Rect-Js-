@@ -59,6 +59,6 @@
 
 @media (max-width : 600px) {
   .header li {
-    text-align: center;
+    margin : 3rem auto;
   }
 }
