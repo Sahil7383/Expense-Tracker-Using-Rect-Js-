@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Expenses from "../Expenses/Expenses";
 import NewExpense from "../NewExpense/NewExpense";
+import AuthContext from "../../../store/auth-context";
 
 const DUMMY_EXPENSES = [];
 
