@@ -6,18 +6,30 @@ const DUMMY_EXPENSES = [];
 
 const ExpenseContent = () => {
   const [expenses, setExpanses] = useState(DUMMY_EXPENSES);
+  const authCtx = useContext(AuthContext);
 
   const addExpenseHandler = (expense) => {
     setExpanses((prevExpanses) => {
       return [expense, ...prevExpanses];
     });
   };
+  
   return (
-    <div>
-      <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
-    </div>
+    <React.Fragment>
+      {authCtx.isLoggedIn && (
+        <div>
+          <NewExpense onAddExpense={addExpenseHandler} />
+          <Expenses items={expenses} />
+        </div>
+      )}
+    </React.Fragment>
   );
+//   return (
+//     <div>
+//       <NewExpense onAddExpense={addExpenseHandler} />
+//       <Expenses items={expenses} />
+//     </div>
+//   );
 };
 
 export default ExpenseContent;
