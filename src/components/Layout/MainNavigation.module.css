@@ -56,3 +56,9 @@
   background-color: #CFD8DC;
   color: black;
 }
+
+@media (max-width : 600px) {
+  .header li {
+    margin: auto;
+  }
+}
